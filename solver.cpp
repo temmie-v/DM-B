@@ -3,7 +3,7 @@
  * solver.cpp
  */
 
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS // not to mention warnings
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -68,7 +68,7 @@ string pareto_op(const int r[2][2][2]) {
             if (p[i].first < p[j].first && p[i].second < p[j].second)
                 pareto = false;
         }
-        if (pareto){
+        if (pareto) {
             if (res != "") res += ", ";
             string c1 = (i > 1 ? "b" : "a"), c2 = (i % 2 ? "b" : "a");
             res += "(" + c1 + "1, " + c2 + "2)";
@@ -87,7 +87,7 @@ int main(void) {
 
     while (getline(ifs, buf)) {
         cout << buf << endl;
-        ofs << buf << endl;
+        ofs << buf << endl; // description of this question(Game 01 ...)
         ofs << "(1,2)  a2  b2" << endl;
         int rate[2][2][2] = {}; //rate[1's choice][2's choice][i's] = rating
                                 // a1,b1,i=1 -> 0, a2,b2,i=2 -> 1 (0-indexed)
