@@ -77,14 +77,14 @@ void solve(const int wlist, const int r[N][N]) {
                                         if (r[l][m] != k 
                                             && r[l][n] == k 
                                             && m < n 
-                                            && Acp[r[l][m]] != 0) {
-                                            flag--;
+                                            && Acp[r[l][m]]) {
+                                            flag = 0;
                                         }
                                     }
                                 }
                             }
                         }
-                        if (flag == 1) {
+                        if (flag) {
                             printf("        *(in x = %c) ", 'a' + k);
                             printS(j);
                             printf("\n");
