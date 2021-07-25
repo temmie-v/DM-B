@@ -6,7 +6,9 @@
 int compare(const void *a, const void *b) {
     return *(int *)a < *(int *)b ? -1 : *(int *)a > *(int *)b ? 1 : 0;
 }
-void sort(int *a, int n) { qsort(a, n, sizeof(int), compare); } // sort function
+void sort(int *a, int n) { // sort function
+    qsort(a, n, sizeof(int), compare);
+}
 
 int Wlist[11] = {170, 204, 240, 168, 200, 224, 136, 192, 160, 128, 232};
 // a list of W in the given order
@@ -121,7 +123,7 @@ void solve() {
                 if (ans == 0) { // Core is empty
                     corelist[0][++corelist[0][0]] = i + 11 * (dm2 * 6 + dm3);
                 }
-                else if (ans == 7) { // Core is A
+                if (ans == 7) { // Core is A
                     corelist[1][++corelist[1][0]] = i + 11 * (dm2 * 6 + dm3);
                 }
                 printCore(ans);
